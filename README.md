@@ -20,3 +20,11 @@ Set `AI_BASE_URL`, `AI_API_KEY`, and `AI_MODEL` in `.env` before calling the mod
 
 ## Status
 Starter MVP; provider calls require a compatible endpoint and credentials.
+
+## Live deployment
+
+- **Frontend:** https://gen-ai-frontend-vijayjangids-projects.vercel.app
+- **Backend API:** https://genai-playground-api.onrender.com
+- **API docs:** https://genai-playground-api.onrender.com/docs
+
+> Deployment is an MVP. Configure required secrets (if any), add authentication, and use durable database storage before production use.
