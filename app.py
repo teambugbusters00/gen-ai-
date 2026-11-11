@@ -3,8 +3,10 @@ import os,json
 from pathlib import Path
 import httpx
 from fastapi import FastAPI,HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel,Field
 app=FastAPI(title="GenAI Playground");DB=Path("prompts.json")
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 def read():return json.loads(DB.read_text()) if DB.exists() else []
 class Prompt(BaseModel):name:str=Field(min_length=1);template:str=Field(min_length=1)
 class Run(BaseModel):name:str;variables:dict[str,str]={}
